@@ -1,1 +1,202 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCHS Robotics</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #0d0d0d;
+      color: #d1d1e0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(45deg, #3f0071, #001f3f);
+      color: white;
+      text-align: center;
+      padding: 3rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: rgba(25, 25, 50, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    h2 {
+      color: #8a2be2;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #8a2be2;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    ul li::before {
+      content: "➤";
+      color: #8a2be2;
+      margin-right: 0.5rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(45deg, #6200ea, #00bfff);
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+    }
+
+    .cta a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(98, 0, 234, 0.8);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1a1a2e;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #8a2be2;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .cta a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BCHS Robotics</h1>
+  <p>Empowering Students Through Robotics and STEM</p>
+</header>
+
+<main>
+  <section>
+    <h2>Who Are We?</h2>
+    <p>
+      We are <strong>Bishop Carroll High School</strong> in Calgary, Alberta. Our school follows a unique self-guided 
+      learning approach that encourages students to pursue their personal interests. This year, we are excited to launch a 
+      <strong>FIRST Robotics Competition (FRC) team</strong> to offer students hands-on learning experiences in Science, 
+      Technology, Engineering, and Math (STEM).
+    </p>
+    <p>This is our rookie year, and we are working hard to build and compete with our robot at the international level. We need your support to make it happen!</p>
+  </section>
+
+  <section>
+    <h2>What is FIRST Robotics?</h2>
+    <p>
+      FIRST Robotics is a global competition where high school students design, build, and program semi-autonomous robots 
+      to compete with other teams worldwide. Over a six-week period, students engage in engineering activities like:
+    </p>
+    <ul>
+      <li>Designing and Prototyping</li>
+      <li>Wiring and Coding</li>
+      <li>Testing and Evaluating</li>
+    </ul>
+    <p>It’s a thrilling experience that challenges students while fostering teamwork, problem-solving, and creativity.</p>
+  </section>
+
+  <section>
+    <h2>Support Our Mission</h2>
+    <p>
+      As a new team, we need tools and equipment like 3D printers and robot parts to bring our ideas to life. 
+      Your donations will help cover essential costs such as:
+    </p>
+    <ul>
+      <li>Robot parts and supplies</li>
+      <li>Competition fees</li>
+      <li>Accommodation and meals for out-of-town competitions</li>
+    </ul>
+    <p>Your generosity will directly impact the learning experiences of our students and help us achieve our goals!</p>
+  </section>
+
+  <section>
+    <h2>Our Community Involvement</h2>
+    <p>
+      In addition to competing, we are committed to promoting STEM education within our community. We plan to host school visits 
+      to showcase our robots and lead activities using LEGO EV3 kits. We will also organize community competitions to inspire the 
+      next generation of students to explore STEM fields.
+    </p>
+  </section>
+
+  <section>
+    <h2>Help Us Reach Our Goal</h2>
+    <p>
+      We aim to raise <strong>$8,000 CAD</strong> to cover competition, and registration fees. Every donation, big or small, helps us bring this vision to life.
+    </p>
+  </section>
+
+  <div class="cta">
+    <a href="#">Donate Now</a>
+  </div>
+</main>
+
+<footer>
+  <p>Contact us at <a href="mailto:bchsrobotics@outlook.com">bchsrobotics@outlook.com</a></p>
+</footer>
+
+</body>
+</html>
