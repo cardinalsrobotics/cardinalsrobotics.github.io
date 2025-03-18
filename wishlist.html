@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCHS Robotics Wishlist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>BCHS Robotics Wishlist</h1>
+    <p>Your support makes a difference! Explore our wishlist items below.</p>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#wishlist">Wishlist</a></li>
+      <li><a href="#cta">Donate Now</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="wishlist">
+      <h2>Our Wishlist Items</h2>
+      <p>
+        Thank you for your interest in supporting BCHS Robotics! Below is our current wishlist. Your contributions directly impact our students and the community.
+      </p>
+      <p>For any of these items, please contact us prior, if the links are broken, please let us know and we'll fix that as soon as possible!</p>
+      <p>Please note that we are able to provide exclusive benefits to donors of the items on this list.</p>
+      <div id="wishlist-items">
+        <!-- Wishlist items will be loaded here -->
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta">
+      <h2>Support BCHS Robotics</h2>
+      <p>
+        Donations help us cover equipment, competition fees, and outreach programs.
+      </p>
+      <a href="https://www.studentquickpay.com/CSSD/MyAccount/Main.aspx?webitemid=8611" class="donate-btn">Donate Now</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact us at <a href="mailto:bchsrobotics@outlook.com">bchsrobotics@outlook.com</a></p>
+  </footer>
+
+  <!-- Script to load wishlist items -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('wishlist.json');
+        if (!response.ok) throw new Error("Could not load wishlist.");
+
+        const items = await response.json();
+        const container = document.getElementById('wishlist-items');
+
+        items.forEach(item => {
+          const itemDiv = document.createElement('div');
+          itemDiv.classList.add('wishlist-item');
+
+          itemDiv.innerHTML = `
+            <h3>${item.name}</h3>
+            <p><strong>Approximate Value:</strong> ${item.value}</p>
+            <p>${item.reason}</p>
+            <p><a href="${item.link}" target="_blank" class="item-link">View Item</a></p>
+            ${item.promotional ? `<p><strong>Donors receive branded keychains and promotional items!</strong></p>` : ''}
+            <p>If you're interested in this item, <a href="mailto:bchsrobotics@outlook.com">contact us</a>. Thank you!</p>
+          `;
+
+          container.appendChild(itemDiv);
+        });
+      } catch (error) {
+        console.error(error);
+        document.getElementById('wishlist-items').innerHTML = `<p>Unable to load wishlist. Please check back later.</p>`;
+      }
+    });
+  </script>
+
+</body>
+</html>

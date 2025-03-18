@@ -173,3 +173,93 @@ footer {
 }
 
 /* Collapsible Functionality Script */
+/* Wishlist Styles */
+#wishlist {
+  padding: 2rem 1rem;
+  background-color: rgba(25, 25, 50, 0.9);
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.wishlist-item {
+  border-bottom: 1px solid #8a2be2;
+  padding: 1rem 0;
+}
+
+.wishlist-item h3 {
+  color: #00bfff;
+  font-size: 1.5rem;
+}
+
+.item-link {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.item-link:hover {
+  text-decoration: underline;
+}
+
+#wishlist-items p {
+  margin: 0.5rem 0;
+}
+
+/* Collapsible Button Styles */
+.collapsible {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.collapsible:hover {
+  background-color: #8a2be2;
+}
+
+.collapsible.active {
+  background-color: #8a2be2;
+}
+
+/* Collapsible Content Styles */
+.content {
+  display: none;
+  padding: 1rem;
+  background-color: rgba(25, 25, 50, 0.9);
+  border-left: 3px solid #00bfff;
+  border-radius: 0 5px 5px 5px;
+}
+
+.wishlist-item {
+  border-bottom: 1px solid #8a2be2;
+  padding: 1rem 0;
+}
+
+.wishlist-item h3 {
+  color: #00bfff;
+  font-size: 1.5rem;
+}
+
+.item-link {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.item-link:hover {
+  text-decoration: underline;
+}
+
+#wishlist-items p {
+  margin: 0.5rem 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}

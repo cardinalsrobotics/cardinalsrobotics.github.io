@@ -25,6 +25,7 @@
       <li><a href="#support">Support Our Mission</a></li>
       <li><a href="#community">Community Involvement</a></li>
       <li><a href="#environment">Environmental Commitment</a></li>
+      <li><a href="#wishlist">Wishlist</a></li>
       <li><a href="#cta">Donate Now</a></li>
     </ul>
   </nav>
@@ -122,6 +123,20 @@
   </div>
 </section>
 
+<section id="wishlist">
+  <h2>Wishlist</h2>
+  <button class="collapsible">View Our Wishlist</button>
+  <div class="content">
+    <p>
+      We greatly appreciate any support for our robotics team. Below are items we currently need. Your contribution impacts not only our team but also the community, as we use these resources for educational outreach and events.
+    </p>
+    <div id="wishlist-items">
+      <!-- Wishlist items will be loaded here -->
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Call to Action Section -->
 <section id="cta" class="cta">
@@ -143,20 +158,49 @@
     <p>Contact us at <a href="mailto:bchsrobotics@outlook.com">bchsrobotics@outlook.com</a></p>
   </footer>
 
-<!-- Script for Collapsible Behavior -->
-<script>
-  document.querySelectorAll('.collapsible').forEach(button => {
-    button.addEventListener('click', () => {
-      const content = button.nextElementSibling;
-      button.classList.toggle('active');
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  });
-</script>
-</body>
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Collapsible functionality
+      document.querySelectorAll('.collapsible').forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('active');
+          const content = button.nextElementSibling;
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
 
+      // Load wishlist items
+      async function loadWishlist() {
+        try {
+          const response = await fetch('wishlist.json');
+          if (!response.ok) throw new Error('Failed to load wishlist.');
+
+          const items = await response.json();
+          const container = document.getElementById('wishlist-items');
+
+          items.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('wishlist-item');
+            itemDiv.innerHTML = `
+              <h3>${item.name}</h3>
+              <p><strong>Approximate Value:</strong> ${item.value}</p>
+              <p>${item.reason}</p>
+              <p><a href="${item.link}" target="_blank" class="item-link">View Item</a></p>
+              ${item.promotional ? `<p><strong>Donors of this item receive branded keychains and promotional materials!</strong></p>` : ''}
+              <p>Interested in supporting us? <a href="mailto:bchsrobotics@outlook.com">Contact us!</a></p>
+            `;
+
+            container.appendChild(itemDiv);
+          });
+        } catch (error) {
+          document.getElementById('wishlist-items').innerHTML = '<p>Unable to load wishlist. Please try again later.</p>';
+          console.error(error);
+        }
+      }
+
+      loadWishlist();
+    });
+  </script>
+</body>
 </html>
