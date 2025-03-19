@@ -263,3 +263,30 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+/* Sponsor Gallery Styles */
+.sponsor-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gallery {
+  flex: 1 1 320px;
+  max-width: 320px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.gallery img {
+  width: 320px;
+  height: 100px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.sponsor-category {
+  margin-bottom: 2rem;
+}
+
+.sponsor-category h3 {
+  color: #8a2be2;
+}
